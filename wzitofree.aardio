@@ -1,0 +1,23 @@
+//解压zip文件
+import console;
+import fsys.dlg; 
+import zlib.unzip;
+
+
+//遍历目录，获取所有的ziw文件路径
+
+//
+var ok,err = zlib.unzip.extract( 
+fsys.dlg.open("*.zip|*.zip|*.ziw","请选择需要解压的zip文件"),"/my",
+	function(fileName,extractPath,fileInfo,size,unitSize,unitName){
+		if( size !== null )
+			..console.log( "正在解压文件",fileName,size++ unitName );
+		else {
+			..console.log( "正在解压目录",fileName );
+		}
+		
+		return true;
+	}
+)
+
+console.pause();
